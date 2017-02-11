@@ -1,10 +1,19 @@
 # config valid only for current version of Capistrano
+lock '3.7.2'
+
+set :application, 'michaelgaskill.com'
+set :repo_url, 'https://github.com/mgaskill/michaelgaskill.com.git'
+set :branch, 'master'
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/home/rails/michaelgaskill.com"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
