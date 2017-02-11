@@ -5,7 +5,7 @@ set :application, 'michaelgaskill.com'
 set :repo_url, 'https://github.com/mgaskill/michaelgaskill.com.git'
 set :branch, 'master'
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets')
 
 
 # Default branch is :master
