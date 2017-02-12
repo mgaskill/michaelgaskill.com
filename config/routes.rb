@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'main' => "main#index"
   get 'links' => "main#links"
-#  resource :main
 
   root 'main#index'
 
