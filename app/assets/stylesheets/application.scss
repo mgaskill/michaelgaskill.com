@@ -144,3 +144,22 @@ header {
     padding: 20px 10px;
   }
 }
+
+section#links {
+  ul {
+    li {
+      position: relative;
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 5px 10px;
+      }
+
+      img + a {
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+}
