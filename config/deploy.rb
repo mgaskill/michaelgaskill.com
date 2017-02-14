@@ -35,3 +35,30 @@ set :deploy_to, "/home/rails/michaelgaskill.com"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
+
+namespace :deploy do
+  %w{start stop restart}.each do |command|
+    desc "#{command} the Unicorn server"
+    task command do 
+      on roles :app do
+        execute "sudo service unicorn #{command}"
+      end
+    end
+  end
+
+  # see: http://vladigleba.com/blog/2014/04/10/deploying-rails-apps-part-6-writing-capistrano-tasks/
+  desc "Verify that local git version is in sync with the remote master head"
+  task :check_revision do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes"
+      exit
+    end
+  end
+
+  before :deploy, "deploy:check_revision"
+  after :deploy, "deploy:restart"
+  after :rollback, "deploy:restart"
+end
