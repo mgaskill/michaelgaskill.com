@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'about' => "main#about"
   get 'links' => "main#links"
+  get 'gandysoft' => "main#gandysoft"
 
   root 'main#index'
 
