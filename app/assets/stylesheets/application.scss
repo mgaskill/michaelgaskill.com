@@ -156,23 +156,3 @@ section {
     color: black;
   }
 }
-
-section#links {
-  ul {
-    li {
-      position: relative;
-      margin: 5px 0;
-
-      img {
-        width: 16px;
-        height: 16px;
-        margin: 5px 10px;
-      }
-
-      img + a {
-        position: relative;
-        top: -6px;
-      }
-    }
-  }
-}
