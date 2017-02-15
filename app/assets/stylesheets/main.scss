@@ -19,3 +19,29 @@ section#links {
     }
   }
 }
+
+section#main {
+  a {
+    &:hover {
+      img {
+        border-color: lightgray;
+      }
+    }
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+    border: 3px solid #606060;
+    margin: 25px;
+  }
+}
+
+section#gandysoft {
+  .youtube-video {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 700px;
+    height: 394px;
+  }
+}
