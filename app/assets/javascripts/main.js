@@ -11,7 +11,7 @@ function centerImageOnScreen(image) {
   if ((maximal_height - image.height()) < (maximal_width - image.width())) {
     image.height(maximal_height);
   } else {
-    image.height(maximal_width * ratio);
+    image.height(maximal_width / ratio);
   }
 
   // Scale image down to viewport size, if larger than viewport
