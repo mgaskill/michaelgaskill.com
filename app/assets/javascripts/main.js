@@ -5,14 +5,20 @@ function centerImageOnScreen(image) {
   var window_width = window.innerWidth;
   var maximal_height = window_height * 0.96;
   var maximal_width = window_width * 0.96;
+  var ratio = image.width() / image.height();
+
+  if ((maximal_height - image.height()) < (maximal_width - image.width())) {
+    image.height(maximal_height);
+  } else {
+    image.height(maximal_width * ratio);
+  }
 
   if (image.height() > maximal_height) {
-    height = maximal_height;
-    image.height(height);
+    image.height(maximal_height);
   }
 
   if (image.width() > maximal_width) {
-    image.width(maximal_width);
+    image.height(maximal_width * ratio);
   }
 
   var width = image.width();
@@ -24,7 +30,6 @@ function centerImageOnScreen(image) {
   var top_pos = (window_height-height)/2;
   var left_pos = (window_width-width)/2;
 
-  image.css("position", "absolute");
   image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos });
 }
 
