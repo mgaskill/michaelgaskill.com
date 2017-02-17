@@ -193,3 +193,23 @@ figcaption {
   margin: 5px 0;
   padding: 0;
 }
+
+.blanket {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 9998;
+  overflow: hidden;
+  background-color: black;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+}
+
+.blanket_image {
+  z-index: 9999;
+  margin: 0 auto;
+  position: fixed;
+}

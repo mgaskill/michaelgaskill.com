@@ -5,12 +5,27 @@ function onGandySoftShowReady() {
   var blanket = $("<div />").addClass("blanket").attr("style", "display: none");
   var blanket_image = $("<img />").addClass("blanket_image").attr("style", "display: none; position: absolute");
 
-  $("body").append(blanket);
-
-  blanket.click(function() {
+  var hideBlanketAndImage = function() {
     blanket.hide();
     blanket_image.hide();
     blanket_image.attr("src", "");
+  };
+
+  var centerBlanketImage = function() {
+    if (blanket.is(":visible")) {
+      centerImageOnScreen(blanket_image);
+    }
+  };
+
+  $("body").append(blanket);
+  $("body").append(blanket_image);
+
+  blanket.click(hideBlanketAndImage);
+  blanket_image.click(hideBlanketAndImage);
+  $(document).keyup(function(event) {
+    if (event.keyCode == 27) {
+        hideBlanketAndImage();
+    }
   });
 
   screenshots.click(function() {

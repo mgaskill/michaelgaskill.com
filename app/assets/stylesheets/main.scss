@@ -52,5 +52,9 @@ section#gandysoft {
     margin: 0 auto;
     display: block;
     border: 3px solid #606060;
+
+    &:hover {
+      border-color: lightgray;
+    }
   }
 }
