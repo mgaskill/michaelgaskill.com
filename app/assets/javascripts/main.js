@@ -30,7 +30,7 @@ function centerImageOnScreen(image) {
   var top_pos = (window_height-height)/2;
   var left_pos = (window_width-width)/2;
 
-  image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos });
+  image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos + $("body").scrollLeft() });
 }
 
 function onGandySoftShowReady() {
@@ -62,6 +62,7 @@ function onGandySoftShowReady() {
   });
 
   $(window).scroll(centerBlanketImage);
+  $(window).scrollLeft(centerBlanketImage);
   $(window).resize(centerBlanketImage);
 
   screenshots.click(function() {
