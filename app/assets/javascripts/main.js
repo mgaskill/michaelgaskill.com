@@ -1,5 +1,33 @@
 // Javascript code for the Main controller
 
+function centerImageOnScreen(image) {
+  var window_height = window.innerHeight;
+  var window_width = window.innerWidth;
+  var maximal_height = window_height * 0.96;
+  var maximal_width = window_width * 0.96;
+
+  if (image.height() > maximal_height) {
+    height = maximal_height;
+    image.height(height);
+  }
+
+  if (image.width() > maximal_width) {
+    image.width(maximal_width);
+  }
+
+  var width = image.width();
+  var height = image.height();
+
+  console.log("width:", width);
+  console.log("height:", height);
+
+  var top_pos = (window_height-height)/2;
+  var left_pos = (window_width-width)/2;
+
+  image.css("position", "absolute");
+  image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos });
+}
+
 function onGandySoftShowReady() {
   var screenshots = $(".screenshot");
   var blanket = $("<div />").addClass("blanket").attr("style", "display: none");
@@ -28,12 +56,11 @@ function onGandySoftShowReady() {
     }
   });
 
+  $(window).scroll(centerBlanketImage);
+  $(window).resize(centerBlanketImage);
+
   screenshots.click(function() {
     var screenshot = $(this);
-    var window_height = window.innerHeight;
-    var window_width = window.innerWidth;
-    var maximal_height = window_height * 0.96;
-    var maximal_width = window_width * 0.96;
 
     if (blanket.is(":visible")) {
         return;
@@ -42,26 +69,6 @@ function onGandySoftShowReady() {
     blanket.show();
     blanket_image.attr("src", screenshot.attr("src"));
     blanket_image.show();
-
-    if (image.height() > maximal_height) {
-      height = maximal_height;
-      blanket_image.height(height);
-    }
-
-    if (image.width() > maximal_width) {
-      blanket_image.width(maximal_width);
-    }
-
-    var width = blanket_image.width();
-    var height = blanket_image.height();
-
-    console.log("width:", width);
-    console.log("height:", height);
-
-    var top_pos = (window_height-height)/2;
-    var left_pos = (window_width-width)/2;
-
-    blanket_image.css("position", "absolute");
-    blanket_image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos });
+    centerImageOnScreen(blanket_image);
   });
 }
