@@ -23,14 +23,8 @@ function centerImageOnScreen(image) {
     image.height(maximal_width * ratio);
   }
 
-  var width = image.width();
-  var height = image.height();
-
-  console.log("width:", width);
-  console.log("height:", height);
-
-  var top_pos = (window_height-height)/2;
-  var left_pos = (window_width-width)/2;
+  var top_pos = (window_height-image.height())/2;
+  var left_pos = (window_width-image.width())/2;
 
   // Center the image in the viewport
   image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos + $("body").scrollLeft() });
