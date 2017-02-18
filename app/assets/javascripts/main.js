@@ -20,7 +20,7 @@ function centerImageOnScreen(image) {
   }
 
   if (image.width() > maximal_width) {
-    image.height(maximal_width * ratio);
+    image.height(maximal_width / ratio);
   }
 
   var top_pos = (window_height-image.height())/2;
