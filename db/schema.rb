@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228215112) do
+ActiveRecord::Schema.define(version: 20170228221807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,26 @@ ActiveRecord::Schema.define(version: 20170228215112) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "name",        limit: 40, null: false
+    t.string   "slug",        limit: 40, null: false
+    t.integer  "showcase_id",            null: false
+    t.text     "description",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["showcase_id", "name"], name: "index_pages_on_showcase_id_and_name", unique: true, using: :btree
+    t.index ["showcase_id", "slug"], name: "index_pages_on_showcase_id_and_slug", unique: true, using: :btree
+  end
+
+  create_table "showcases", force: :cascade do |t|
+    t.string   "name",       limit: 40, null: false
+    t.string   "slug",       limit: 40, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_showcases_on_name", unique: true, using: :btree
+    t.index ["slug"], name: "index_showcases_on_slug", unique: true, using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|
