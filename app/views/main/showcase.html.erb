@@ -1,0 +1,7 @@
+<section id="<%= @showcase.slug %>">
+<%= @page.description.html_safe %>
+</section>
+
+<script type="text/javascript">
+  jQuery(document).on('turbolinks:load', onShowcaseReady);
+</script>
