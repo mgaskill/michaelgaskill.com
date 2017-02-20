@@ -38,23 +38,10 @@ section#main {
 }
 
 section#gandysoft {
-  text-align: justify;
-
   .youtube-video {
     margin: 0 auto;
     overflow: hidden;
     width: 450px;
     height: 253px;  // 0.5625 of width
-  }
-
-  img {
-    width: 200px;
-    margin: 0 auto;
-    display: block;
-    border: 3px solid #606060;
-
-    &:hover {
-      border-color: lightgray;
-    }
   }
 }
