@@ -30,8 +30,8 @@ function centerImageOnScreen(image) {
   image.offset({ top: top_pos + $("body").scrollTop(), left: left_pos + $("body").scrollLeft() });
 }
 
-function onGandySoftShowReady() {
-  var screenshots = $(".screenshot");
+function onShowcaseReady() {
+  var screenshots = $("img.screenshot");
   var blanket = $("<div />").addClass("blanket").attr("style", "display: none");
   var blanket_image = $("<img />").addClass("blanket_image").attr("style", "display: none; position: absolute");
 
