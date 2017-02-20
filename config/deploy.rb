@@ -38,6 +38,25 @@ set :deploy_to, "/home/rails/michaelgaskill.com"
 
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
+# Deploy task for importing fixture data
+#
+namespace :deploy do
+  desc 'Migrate Data Fixtures'
+  task import_fixtures: [:set_rails_env] do
+    on roles :app do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:fixture:import"
+        end
+      end
+    end
+  end
+
+  after 'deploy:migrate', "deploy:import_fixtures"
+end
+
+# Deploy tasks for managing the unicorn server
+#
 namespace :deploy do
   %w{start stop restart}.each do |command|
     desc "#{command} the Unicorn server"
