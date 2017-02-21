@@ -21,10 +21,10 @@ architecure* fashion.  I am familiar with using various ESB systems, including
 *Oracle Tuxedo, TIBCO, and MicroSoft BizTalk,* as well as message-queue middleware,
 such as *IBM MQ, Microsoft MQ, RabbitMQ, and Java JMS.*
 
-I conceived, architected, and co-developed a full SOA product, named BroadSight,
-that was developed to implement the *Object Management Group (OMG)* TINA-C
+I conceived, architected, and co-developed a full SOA platform, named BroadSight,
+that was created to implement the *Object Management Group (OMG)* TINA-C
 specification for telecommunications interoperability.  BroadSight was a
 telecom-grade product, with support for services written in *C, C++, and Java* and
-bus service available via *CORBA, COM/DCOM, SOAP, Java RMI, and an efficient
-proprietary wire protocol.*  The was used successfully on *Windows, Linux, and
-Solaris*, and was designed to be fully platform-independent.
+bus service available via *CORBA, COM/DCOM, SOAP, Java RMI, and a robust, efficient
+proprietary wire protocol* that I created.  The product was used successfully on
+*Windows, Linux, and Solaris*, and was designed to be fully platform-independent.
