@@ -26,6 +26,7 @@ provides at a fraction of the cost.
     * [Advanced Modeling][8]
 * [Reconciliation][9]
 * [Reporting][10]
+
 </div>
 
 <div class="pure-u-1-2 youtube-video">
@@ -34,6 +35,10 @@ provides at a fraction of the cost.
 </iframe>
 </div>
 </div>
+
+## Test Drive
+
+Full details on how to use PAIRS can be found here on the [Test Drive][11] page.
 
 [1]: /gandysoft/data
 [2]: /gandysoft/workflow
@@ -45,3 +50,4 @@ provides at a fraction of the cost.
 [8]: /gandysoft/advanced-modeling
 [9]: /gandysoft/reconciliation
 [10]: /gandysoft/reporting
+[11]: /gandysoft/test-drive
