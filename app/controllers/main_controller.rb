@@ -10,6 +10,6 @@ class MainController < ApplicationController
 
     redirect_to "/#{@showcase.slug}" if page == "main"
 
-    @page = Page.friendly.find(page || "main")
+    @page = @showcase.pages.friendly.find(page || "main")
   end
 end
