@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'links' => "main#links"
-
   get '/:showcase' => "main#showcase"
   get '/:showcase/:page' => "main#showcase"
 
