@@ -9,12 +9,12 @@ filters and the user's preferences.
 Various fields on the form 1004MC are designated for specific remarks; PAIRS will
 *automatically draft remarks* using pre-defined *remarks templates.*  A complete set
 of default *remarks templates* are provided with PAIRS, and the appraiser can
-customize and override the remarks templates in their *user profile.*  If a custom
-remarks template exists in the user's profile, it will be used; otherwise, the
-default remarks template will be used.  The appraiser may also edit the remarks
-directly in the 1004MC to reflect actual conditions present in the data, but not
-addressed in the remarks template.  Editing the remarks will automatically render
-the template with actual values once the text caret leaves the remarks field.
+customize and override the remarks templates in their *User Profile Preferences.*
+When a custom remarks template exists in the user's profile, it will be used;
+otherwise, the default remarks template will be used.  The appraiser may also edit
+the remarks directly in the 1004MC to reflect actual conditions present in the data,
+but not addressed in the remarks template.  Editing the remarks will automatically
+render the template with actual values once the text caret leaves the remarks field.
 
 <div class="pure-g">
 <div class="pure-u-1-3">
