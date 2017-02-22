@@ -32,8 +32,20 @@ function centerImageOnScreen(image) {
 
 function onShowcaseReady() {
   var screenshots = $("img.screenshot");
-  var blanket = $("<div />").addClass("blanket").attr("style", "display: none");
-  var blanket_image = $("<img />").addClass("blanket_image").attr("style", "display: none; position: absolute");
+  var blanket;
+  var blanket_image;
+
+  if ($(".blanket").length) {
+    blanket = $(".blanket");
+    blanket_image = $(".blanket_image");
+  } else {
+    // Dynamically add the blanket and preview image to the body
+    blanket = $("<div />").addClass("blanket").attr("style", "display: none");
+    blanket_image = $("<img />").addClass("blanket_image").attr("style", "display: none; position: absolute");
+
+    $("body").append(blanket);
+    $("body").append(blanket_image);
+  }
 
   var hideBlanketAndImage = function() {
     blanket.hide();
@@ -46,10 +58,6 @@ function onShowcaseReady() {
       centerImageOnScreen(blanket_image);
     }
   };
-
-  // Dynamically add the blanket and preview image to the body
-  $("body").append(blanket);
-  $("body").append(blanket_image);
 
   // Event handlers to close the screenshot preview
   blanket.click(hideBlanketAndImage);
