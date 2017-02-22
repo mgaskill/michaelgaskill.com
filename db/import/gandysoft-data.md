@@ -30,9 +30,28 @@ features,* and eliminate unnecessary or unused fields from the analysis.
 </div>
 
 This provides a broader set of "normal" sales for the market, which greatly
-*improves statistical reliability*, but also introduces the possibility of anomalous
-and/or bad MLS data that must be dealt with.  MLS data is notoriously unreliable,
-and the relatively low quality of the data poses a major challenge to any form of
-analysis.  PAIRS provides a variety of *dynamic filtering* mechanisms, which gives
-the appraiser the ability to remove (filter out) data that's unreliable, wrong, or
-truly not comparable with the subject property.
+*improves statistical reliability* of the analysis.  A key requirement is that this
+set of sales *must be comparable* to the subject property; non-comparable sales
+simply pollute the analysis, so the appraiser must be diligent in selecting the
+data set.
+
+Most, if not all of this data originates from the appraiser's MLS system, and an
+unfortunate fact of life is that MLS data is notoriously unreliable.  The relatively
+low quality of the data poses a major challenge to any form of analysis.  Each MLS
+system uses different, sometimes conflicting field names and data representations;
+there is no "one-size-fits-all" approach to MLS data.  As part of the upload
+process, PAIRS runs this data through more than *600 data normalization processes*
+and *field mappings* to clean it for analysis.  It is this process that turns the
+raw CSV data into usable information.
+
+PAIRS provides a variety of *dynamic filtering* mechanisms, some automatic and some
+manual.  These provide the appraiser the ability to remove (filter out) data that's
+unreliable, fundamentally wrong, or truly not comparable with the subject property.
+The automatic filtering processes will remove any records in which key information
+is missing, such as *Livable Area* or *Lot Size,* and this automatic filtering
+occurs without any actions required by the appraiser.  The manual filtering processes
+are discussed in detail on the [Subject Details][1] and [Advanced Modeling][2] pages.
+
+
+[1]: /gandysoft/subject-details
+[2]: /gandysoft/advanced-modeling
