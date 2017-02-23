@@ -46,7 +46,7 @@ ul {
   }
 }
 
-p, div, ul, li, a {
+p, div, ul, ol, li, a {
   font-size: inherit;
 }
 
@@ -165,6 +165,10 @@ section {
   font-size: 16px;
   text-align: justify;
   margin-bottom: 60px;
+
+  .breadcrumb {
+    float: right;
+  }
 
   p {
     color: #606060;

@@ -1,4 +1,8 @@
 <section id="<%= @showcase.slug %>">
+<% if @page.slug != "main" %>
+<div class="breadcrumb">Back to <%= link_to @showcase.name, "/#{@showcase.slug}" %></div>
+<% end %>
+
 <%= @page.description.html_safe %>
 </section>
 
