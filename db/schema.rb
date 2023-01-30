@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2017_02_28_221807) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -27,7 +24,7 @@ ActiveRecord::Schema.define(version: 2017_02_28_221807) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "pages", id: :serial, force: :cascade do |t|
+  create_table "pages", force: :cascade do |t|
     t.string "name", limit: 40, null: false
     t.string "slug", limit: 40, null: false
     t.integer "showcase_id", null: false
@@ -38,7 +35,7 @@ ActiveRecord::Schema.define(version: 2017_02_28_221807) do
     t.index ["showcase_id", "slug"], name: "index_pages_on_showcase_id_and_slug", unique: true
   end
 
-  create_table "showcases", id: :serial, force: :cascade do |t|
+  create_table "showcases", force: :cascade do |t|
     t.string "name", limit: 40, null: false
     t.string "slug", limit: 40, null: false
     t.datetime "created_at", null: false
@@ -47,7 +44,7 @@ ActiveRecord::Schema.define(version: 2017_02_28_221807) do
     t.index ["slug"], name: "index_showcases_on_slug", unique: true
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -68,7 +65,7 @@ ActiveRecord::Schema.define(version: 2017_02_28_221807) do
     t.index ["tagger_type", "tagger_id"], name: "index_taggings_on_tagger_type_and_tagger_id"
   end
 
-  create_table "tags", id: :serial, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
