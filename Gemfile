@@ -47,6 +47,9 @@ gem "jbuilder"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
 # Friendly ID slugging gem
 gem 'friendly_id', '~> 5.2'
 
@@ -59,6 +62,10 @@ gem 'kramdown', '~> 2.3'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # Use rspec and factory_bot for test automation
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 6.0'
 end
 
 group :development do
@@ -77,6 +84,13 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
