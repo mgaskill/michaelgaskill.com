@@ -3,6 +3,8 @@ class ActsAsTaggableOnMigration < ActiveRecord::Migration[5.0]
   def self.up
     create_table :tags do |t|
       t.string :name, limit: 30
+
+      t.timestamps
     end
 
     create_table :taggings do |t|

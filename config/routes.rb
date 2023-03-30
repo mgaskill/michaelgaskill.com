@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get '/:showcase' => "main#showcase"
   get '/:showcase/:page' => "main#showcase"

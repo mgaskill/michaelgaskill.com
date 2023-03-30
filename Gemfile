@@ -64,11 +64,19 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
+
   # Use Capistrano for deployment
   gem 'capistrano', '~> 3.7'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
+
+  # Use Rubocop for static code analysis
+  gem 'rubocop', require: false
+  gem "rubocop-md"
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rake', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

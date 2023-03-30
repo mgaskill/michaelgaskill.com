@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_30_100723) do
   create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
+    t.string "slug", limit: 140, null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope", limit: 70
@@ -67,6 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_100723) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name", limit: 30
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
   end

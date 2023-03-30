@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # config valid only for current version of Capistrano
 lock '3.7.2'
 
@@ -6,7 +8,6 @@ set :repo_url, 'https://github.com/mgaskill/michaelgaskill.com.git'
 set :branch, 'master'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets')
-
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -58,9 +59,9 @@ end
 # Deploy tasks for managing the unicorn server
 #
 namespace :deploy do
-  %w{start stop restart}.each do |command|
+  [:start, :stop, :restart].each do |command|
     desc "#{command} the Unicorn server"
-    task command do 
+    task command do
       on roles :app do
         execute "sudo service unicorn #{command}"
       end
@@ -71,9 +72,9 @@ namespace :deploy do
   desc "Verify that local git version is in sync with the remote master head"
   task :check_revision do
     unless `git rev-parse HEAD` == `git rev-parse origin/master`
-      puts "WARNING: HEAD is not the same as origin/master"
-      puts "Run `git push` to sync changes"
-      exit
+      puts "WARNING: HEAD is not the same as origin/master" # rubocop:disable Rails/Output
+      puts "Run `git push` to sync changes" # rubocop:disable Rails/Output
+      exit # rubocop:disable Rails/Exit
     end
   end
 
