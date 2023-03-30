@@ -8,10 +8,10 @@ class MainController < ApplicationController
 
   def showcase
     @showcase = Showcase.friendly.find(params[:showcase])
-    page = params[:page]
+    page = params[:page] || "main"
 
     redirect_to "/#{@showcase.slug}" if page == "main"
 
-    @page = @showcase.pages.friendly.find(page || "main")
+    @page = @showcase.pages.friendly.find(page)
   end
 end
