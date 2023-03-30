@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 load 'db/import/00-import-all-fixtures.rb'
 
 namespace :db do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class MainsControllerTest < ActionDispatch::IntegrationTest
@@ -17,7 +19,7 @@ class MainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create main" do
     assert_difference('Main.count') do
-      post mains_url, params: { main: {  } }
+      post mains_url, params: { main: {} }
     end
 
     assert_redirected_to main_url(Main.last)
@@ -34,7 +36,7 @@ class MainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update main" do
-    patch main_url(@main), params: { main: {  } }
+    patch main_url(@main), params: { main: {} }
     assert_redirected_to main_url(@main)
   end
 

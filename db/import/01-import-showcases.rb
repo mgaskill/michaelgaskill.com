@@ -1,17 +1,21 @@
+# frozen_string_literal: true
+
 require "csv"
 require "kramdown"
 
 class ImportShowcases
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/AbcSize
 
   def self.import
-    csv_options = { :headers => true, :quote_char => '"', :col_sep => ',', :header_converters => :symbol, :encoding => 'UTF-8' }
-    
+    csv_options = { headers: true, quote_char: '"', col_sep: ",", header_converters: :symbol, encoding: "UTF-8" }
+
     ActiveRecord::Base.transaction do
-      puts 'Importing: Showcases'
+      puts "Importing: Showcases" # rubocop:disable Rails/Output
 
-      showcases = Hash[Showcase.all.map {|showcase| [showcase.name, showcase] }]
+      showcases = Showcase.all.index_by(&:name)
 
-      ['gandysoft'].each do |showcase_name|
+      ["gandysoft"].each do |showcase_name|
         CSV.foreach("db/import/showcases.csv", csv_options.dup) do |row|
           showcase_name = row[:showcase]
           page_name = row[:page]
@@ -19,11 +23,11 @@ class ImportShowcases
 
           next if showcase_name.blank? || page_name.blank? || filename.blank?
 
-          puts " -- Processing: #{showcase_name}: #{page_name}"
+          puts " -- Processing: #{showcase_name}: #{page_name}" # rubocop:disable Rails/Output
 
           showcase = showcases[showcase_name]
 
-          if !showcase
+          unless showcase
             showcase = Showcase.new
             showcase.name = showcase_name
             showcase.save!
@@ -41,4 +45,6 @@ class ImportShowcases
     end
   end
 
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 end

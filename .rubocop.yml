@@ -1,0 +1,163 @@
+# .rubocop.yml
+
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop/cop/internal_affairs
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'bin/*'
+  TargetRubyVersion: 2.7
+  SuggestExtensions: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - test/test_helper.rb
+    - config/boot.rb
+    - config/importmap.rb
+    - config/application.rb
+    - config/initializers/assets.rb
+    - config/environments/test.rb
+    - config/environments/development.rb
+    - config/environments/production.rb
+    - app/mailers/application_mailer.rb
+    - db/schema.rb
+    - db/migrate/*.rb
+    - bin/*
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+  Exclude:
+    - db/schema.rb
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns:
+    - !ruby/regexp /\A +(it|describe|context|shared_examples|include_examples|it_behaves_like) ["']/
+  Exclude:
+    - bin/*
+    - db/schema.rb
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Special case exclusions for generated files
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - config/puma.rb
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - bin/*
+
+Metrics/MethodLength:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*.rb
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/*
+
+Style/SpecialGlobalVars:
+  Exclude:
+    - bin/*
+
+Style/IfUnlessModifier:
+  Exclude:
+    - bin/*
+
+Style/PerlBackrefs:
+  Exclude:
+    - bin/*
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/schema.rb
+
+Lint/NonDeterministicRequireOrder:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - db/import/*.rb
+
+Naming/VariableNumber:
+  Enabled: false
+
+Layout/CommentIndentation:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+## Rspec cops
+
+RSpec/Rails/InferredSpecType:
+  Enabled: false
+
+RSpec/NotToNot:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+# Rails cops
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false

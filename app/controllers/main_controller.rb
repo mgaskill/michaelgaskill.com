@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MainController < ApplicationController
   # GET /main
   # GET /main.json
