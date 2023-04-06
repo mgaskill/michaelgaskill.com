@@ -11,6 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require rails-ujs
 //= require_tree .
+
+// import '@hotwired/turbo-rails';
+// import 'controllers';
+
+$(document).on('turbolinks:load', () => {
+  console.log('turbolinks!');
+});
+$(document).on('turbo:load', () => {
+  console.log('turbo!');
+});
