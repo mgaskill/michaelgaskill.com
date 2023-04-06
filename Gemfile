@@ -9,9 +9,6 @@ gem "rails", "~> 7.0", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Asset management for modern React frontend
-gem 'webpacker', '~> 5.4'
-
 # Use Sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -22,7 +19,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Use SCSS for stylesheets
-gem "cssbundling-rails", '>= 0.2.4'
+gem "dartsass-rails", "~> 0.4.1"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

@@ -7,24 +7,24 @@
  */
 
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   src: url(/fonts/Montserrat-Regular.ttf);
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat-Light";
+  font-family: 'Montserrat-Light';
   src: url(/fonts/Montserrat-Light.ttf);
 }
 
 @font-face {
-  font-family: "Montserrat-Italic";
+  font-family: 'Montserrat-Italic';
   src: url(/fonts/Montserrat-Italic.ttf);
 }
 
 @font-face {
-  font-family: "Montserrat-LightItalic";
+  font-family: 'Montserrat-LightItalic';
   src: url(/fonts/Montserrat-LightItalic.ttf);
 }
 
@@ -46,20 +46,30 @@ ul {
   }
 }
 
-p, div, ul, ol, li, a {
+p,
+div,
+ul,
+ol,
+li,
+a {
   font-size: inherit;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
   background-color: inherit;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: steelblue;
 }
 
-a:active, a:hover {
+a:active,
+a:hover {
   color: blue;
 }
 
@@ -105,7 +115,8 @@ body {
   padding: 0;
 }
 
-p, div {
+p,
+div {
   vertical-align: middle;
   margin: 10px 0;
   padding: 0;
@@ -115,7 +126,9 @@ header {
   position: relative;
   font-size: 28px;
 
-  a.logo, ul, a {
+  a.logo,
+  ul,
+  a {
     position: relative;
     font-size: 20px;
   }
@@ -182,7 +195,8 @@ section {
     color: black;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 5px 20px;
   }
 
