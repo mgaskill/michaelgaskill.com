@@ -1,40 +1,29 @@
 {
   "ignored_warnings": [
     {
-      "warning_type": "Cross-Site Scripting",
-      "warning_code": 2,
-      "fingerprint": "d205ced7d9f796d364ab6a3372fb4c1ea0114a3f62141a0689ee880f9346e4ff",
-      "check_name": "CrossSiteScripting",
-      "message": "Unescaped model attribute",
-      "file": "app/views/main/showcase.html.erb",
-      "line": 6,
-      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "Showcase.friendly.find(params[:showcase]).pages.friendly.find((params[:page] or \"main\")).description",
-      "render_path": [
-        {
-          "type": "controller",
-          "class": "MainController",
-          "method": "showcase",
-          "line": 16,
-          "file": "app/controllers/main_controller.rb",
-          "rendered": {
-            "name": "main/showcase",
-            "file": "app/views/main/showcase.html.erb"
-          }
-        }
-      ],
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "4896cfe15cd36c95ab1879181689372d1f284a9b414d78b2d905f90cd5403852",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/controllers/main_controller.rb",
+      "line": 12,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => \"pages/#{params[:showcase]}/#{(params[:page] or \"main\")}\", { :formats => ([:html]), :handlers => ([:md]), :status => :ok })",
+      "render_path": null,
       "location": {
-        "type": "template",
-        "template": "main/showcase"
+        "type": "method",
+        "class": "MainController",
+        "method": "showcase"
       },
-      "user_input": null,
-      "confidence": "High",
+      "user_input": "params[:showcase]",
+      "confidence": "Medium",
       "cwe_id": [
-        79
+        22
       ],
       "note": ""
     }
   ],
-  "updated": "2023-03-30 13:35:38 -0700",
+  "updated": "2023-04-29 23:07:37 -0700",
   "brakeman_version": "5.4.1"
 }
