@@ -17,21 +17,27 @@
 </head>
 
 <body>
-<header>
   <nav class="container">
-    <a href="/" class="logo"><img src="/images/logo-md.png" alt="Michael Gaskill"></a>
-    <ul class="logo-desc">
-      <li id="logo-name">Michael Gaskill</li>
-      <li id="logo-title">Full Stack and Systems Development Lead Engineer</li>
-    </ul>
-    <a href="/links">Links</a>
-    <a href="/about">About</a>
-  </nav>
-</header>
+    <nav id="sidebar">
+      <a href="/" class="logo"><img src="/images/logo-md.png" alt="Michael Gaskill"></a>
+      <a href="/about">About</a>
+      <a href="/links">Other Sites</a>
+      <p>
+        Work history
+        <a href="/gandysoft">GandySoft</a>
+      </p>
+    </nav>
+    <nav id="content">
+      <p id="notice"><%= notice %></p>
 
-<nav class="container">
-<p id="notice"><%= notice %></p>
-<%= yield %>
-</nav>
+      <ul class="logo-desc">
+        <li id="logo-name">Michael Gaskill</li>
+        <li id="logo-title">Full Stack and Systems Development Lead Engineer</li>
+      </ul>
+
+      <%= yield %>
+
+    </nav>
+  </nav>
 </body>
 </html>
