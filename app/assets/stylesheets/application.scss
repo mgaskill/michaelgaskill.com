@@ -37,7 +37,8 @@
 .container {
   margin: 0 auto;
   overflow: hidden;
-  width: 999px;
+  width: 800px;
+  display: flex;
 }
 
 ul {
@@ -74,21 +75,21 @@ a:hover {
 }
 
 section {
-  font-size: 20px;
+  font-size: 70%;
 }
 
 h1 {
-  font-size: 150%;
+  font-size: 200%;
   padding: 25px 0 10px 0;
 }
 
 h2 {
-  font-size: 125%;
+  font-size: 150%;
   padding: 20px 0 10px 0;
 }
 
 h3 {
-  font-size: 110%;
+  font-size: 125%;
   padding: 15px 0 5px 0;
 }
 
@@ -115,67 +116,51 @@ body {
   padding: 0;
 }
 
-p,
-div {
+p {
   vertical-align: middle;
   margin: 10px 0;
   padding: 0;
 }
 
-header {
+a.logo {
+  display: inline-block;
   position: relative;
-  font-size: 28px;
+  font-size: 70%;
+  width: 128px;
+  height: 96px;
+  top: 5px;
 
-  a.logo,
-  ul,
-  a {
-    position: relative;
-    font-size: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+ul {
+  display: block;
+
+  li {
+    margin: 0px 25px;
+    float: none;
+    clear: right;
+    // list-style: none;
   }
 
-  a.logo {
-    display: inline-block;
-    float: left;
-    width: 128px;
-    height: 96px;
-    top: 5px;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  li#logo-name {
+    margin-top: 10px;
+    font-size: 150%;
+    // line-height: 24px;
   }
 
-  ul {
-    display: inline-block;
-
-    li {
-      float: none;
-      clear: right;
-      list-style: none;
-    }
-
-    li#logo-name {
-      margin-top: 10px;
-      font-size: 20px;
-      line-height: 24px;
-    }
-
-    li#logo-title {
-      font-size: 16px;
-      font-style: italic;
-      color: #808080;
-    }
-  }
-
-  a {
-    top: -35px;
-    padding: 20px 10px;
+  li#logo-title {
+    font-size: 125%;
+    font-style: italic;
+    color: #808080;
   }
 }
 
 section {
-  font-size: 16px;
+  font-size: 55%;
   text-align: justify;
   margin-bottom: 60px;
 
@@ -199,16 +184,16 @@ section {
   ol {
     margin: 5px 20px;
   }
+}
 
-  img.screenshot {
-    width: 200px;
-    margin: 20px auto 0 auto;
-    display: block;
-    border: 3px solid #606060;
+img.screenshot {
+  width: 200px;
+  margin: 10px auto 0 auto;
+  display: block;
+  border: 3px solid #606060;
 
-    &:hover {
-      border-color: lightgray;
-    }
+  &:hover {
+    border-color: lightgray;
   }
 }
 
@@ -221,7 +206,7 @@ section {
 
 figcaption {
   text-align: center;
-  font-size: 14px;
+  font-size: 50%;
   margin: 5px 0;
   padding: 0;
 }
@@ -248,4 +233,34 @@ img + figcaption {
   z-index: 9999;
   margin: 0 auto;
   position: fixed;
+}
+
+#sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #355e3b;
+
+  p,
+  a {
+    display: block;
+    padding: 5px 15px;
+  }
+
+  a {
+    color: white;
+  }
+
+  p {
+    color: darkgrey;
+  }
+}
+
+#content {
+  margin-left: 200px;
+  margin-bottom: 25px;
+  padding: 0px 20px;
+  width: 75%;
+  height: 100%;
+  background-color: #eef6ee;
 }
