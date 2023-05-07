@@ -145,18 +145,18 @@ ul {
     clear: right;
     // list-style: none;
   }
+}
 
-  li#logo-name {
-    margin-top: 10px;
-    font-size: 150%;
-    // line-height: 24px;
-  }
+#logo-name {
+  margin-top: 10px;
+  font-size: 150%;
+  // line-height: 24px;
+}
 
-  li#logo-title {
-    font-size: 125%;
-    font-style: italic;
-    color: #808080;
-  }
+#logo-title {
+  font-size: 125%;
+  font-style: italic;
+  color: #808080;
 }
 
 section {
