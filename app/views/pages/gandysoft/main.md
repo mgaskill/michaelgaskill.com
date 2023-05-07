@@ -138,6 +138,5 @@ For additional non-technical details about the project, see here:
 [9]: /gandysoft/reconciliation
 [10]: /gandysoft/reporting
 [11]: /gandysoft/test-drive
-[12]: /gandysoft/feature-development-history
+[12]: /gandysoft/development-phases
 [13]: /gandysoft/major-challenges
-[14]: https://github.com/acumulus/MDMagick
