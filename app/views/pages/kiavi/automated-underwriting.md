@@ -10,6 +10,49 @@ Working with a cross-functional team that included Marketing, Risk, and Product,
 up with a solution that would allow us to automatically underwrite the best of the
 novice borrowers with no operational overhead, whatsoever.
 
+### Implementation Details
+
+The core verification of the borrower during the automated underwite was implemented
+using an [Experian Credit Soft Inquiry][1], which provided key information, such as:
+
+- Identity verification
+- FICO score
+- Credit history
+- Current open accounts (tradelines)
+- Bankruptcies
+- Recent credit activity
+
+The Risk team created a set of rules and thresholds suitable for determining
+risk-worthiness, and an approved novice borrower would be able to use the approval
+for up to 3 months to apply for one or more loans.
+
+Failure cases were handled in different ways, depending on the situation. These were
+the established cases:
+
+- Ambiguous borrower - request SSN and try again
+- Unable to identify borrower - decline
+- Locked credit report - decline
+- Not enough credit history - decline
+- Too many open accounts - decline
+- Non-discharged bankruptcies - decline
+- FICO score too low - decline
+
+FICO scores were used to determine the loan terms, where better scores resulted in
+better loan terms, lower cash required, and better interest rates. The ranges of scores
+that were determined terms was configurable as part of the larger configuration system.
+
+### Long-term Technical Impact
+
+The approach to storing credit reports and recording the vendor request/response was
+significantly different than the existing approaches, as this required decoupling from a
+given loan. This resulted in a major deviation away from the existing approach, but
+also provided a roadmap for future work that needed to be decoupled from a specific loan,
+setting a clear example and inspiring key features of the future architecture.
+
+This also significantly influenced the need to consolidate understanding of credit
+reports and traceability of credit checks; that project was kicked off a few months later
+with the [credit report tracking][2] project.
+
 ### Performance During the Pandemic
 
 This project took 3 months to design and implement, and resulted in novice borrowers
@@ -25,6 +68,8 @@ Due to the exceptional performance that we observed from the automated borrower
 underwrite for novice borrowers, the company moved forward with plans to provide similar
 features for professional borrowers and for underwriting properties for all loans. This
 was one of the driving business forces behind moving to the
-[new architecture][1].
+[new architecture][3].
 
-[1]: /kiavi/new-architecture
+[1]: https://www.experian.com/blogs/ask-experian/what-is-a-soft-inquiry/
+[2]: /kiavi/credit-report-tracking
+[3]: /kiavi/new-architecture
