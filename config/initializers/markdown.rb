@@ -12,7 +12,7 @@ module MarkdownRenderer
     end
 
     def self.render(source)
-      Kramdown::Document.new(source, auto_ids: false).to_html
+      Kramdown::Document.new(source, auto_ids: true).to_html
     end
   end
 end
