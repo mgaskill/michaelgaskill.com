@@ -16,6 +16,7 @@ I held multiple roles at Kiavi, starting as a Staff Software Engineer, and movin
 * [Broker Underwriting][8]
 * [Data Eventing Pipeline][9]
 * [Funnel Simplification][10]
+* [Borrower Preferences][11]
 
 </div>
 
@@ -175,6 +176,7 @@ For additional non-technical details about the project, see here:
 [8]: /kiavi/broker-underwriting
 [9]: /kiavi/data-eventing
 [10]: /kiavi/funnel-simplification
+[11]: /kiavi/borrower-preferences
 [12]: /kiavi/micro-frontend
 [13]: /kiavi/new-architecture
 [14]: /kiavi/microservices
