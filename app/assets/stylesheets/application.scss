@@ -150,13 +150,18 @@ ul {
 #logo-name {
   margin-top: 10px;
   font-size: 150%;
-  // line-height: 24px;
 }
 
 #logo-title {
   font-size: 125%;
   font-style: italic;
   color: #808080;
+}
+
+#links {
+  td {
+    padding: 2px 10px;
+  }
 }
 
 section {
